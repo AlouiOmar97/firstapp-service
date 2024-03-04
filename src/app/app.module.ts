@@ -14,6 +14,8 @@ import { AppaetementComponent } from './appaetement/appaetement.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddAppartmentComponent } from './add-appartment/add-appartment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UpdateAppartmentComponent } from './update-appartment/update-appartment.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,17 @@ import { AddAppartmentComponent } from './add-appartment/add-appartment.componen
     NotfoundComponent,
     AppaetementComponent,
     ResidenceDetailsComponent,
-    AddAppartmentComponent
+    AddAppartmentComponent,
+    UpdateAppartmentComponent
   ],
   imports: [
     BrowserModule,
     AnnonceModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

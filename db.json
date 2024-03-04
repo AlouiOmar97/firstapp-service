@@ -1,0 +1,50 @@
+{
+  "appartement": [
+    {
+      "id": "1",
+      "apartNum": "251",
+      "floorNum": 44,
+      "surface": "55",
+      "terrasse": "yes",
+      "surfaceterrasse": "",
+      "category": "test",
+      "description": "Consectetur perfere 111",
+      "residence": {
+        "id": 1,
+        "name": "El fel",
+        "address": "Borj Cedria",
+        "image": "../../assets/images/R1.jpeg"
+      }
+    },
+    {
+      "id": "2",
+      "apartNum": "261",
+      "floorNum": 88,
+      "surface": "22",
+      "terrasse": "no",
+      "surfaceterrasse": "des",
+      "category": "test",
+      "description": "Consectetur perfere",
+      "residence": {
+        "id": 1,
+        "name": "El fel",
+        "address": "Borj Cedria",
+        "image": "../../assets/images/R1.jpeg"
+      }
+    },
+    {
+      "terrasse": "jjjjkkkkkkkkk",
+      "category": "S+3",
+      "numAppart": 1,
+      "residence": "3",
+      "id": "2934"
+    },
+    {
+      "id": "d173",
+      "terrasse": "jjjjkkkkkkkkk",
+      "category": "S+1",
+      "numAppart": 2,
+      "residence": "2"
+    }
+  ]
+}
