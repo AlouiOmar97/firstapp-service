@@ -1,6 +1,7 @@
-<p>appartement works!</p>
-<div>
-    <p *ngFor="let a of appartmentList" >
-        {{ a.description }}
-    </p>
+<div class="container">
+    <h1>Appartment List</h1>
+    <a routerLink="/appartment/add">Add Appartment</a>
+    <div class="row">
+        <app-appartment-card class="col-3 m-1" *ngFor="let a of appartmentList" [appartmentC]="a"></app-appartment-card>
+    </div>
 </div>

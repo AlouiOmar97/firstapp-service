@@ -2,41 +2,47 @@
   "appartement": [
     {
       "id": "1",
-      "apartNum": "251",
-      "floorNum": 44,
+      "numAppart": "251",
+      "numEtage": 44,
       "surface": "55",
       "terrasse": "yes",
       "surfaceterrasse": "",
       "category": "test",
       "description": "Consectetur perfere 111",
       "residence": {
-        "id": 1,
-        "name": "El fel",
-        "address": "Borj Cedria",
-        "image": "../../assets/images/R1.jpeg"
+        "id": 101,
+        "name": "Residence Foll",
+        "address": "Address 2",
+        "image": "/assets/images/residence2.jpg"
       }
     },
     {
       "id": "2",
-      "apartNum": "261",
-      "floorNum": 88,
+      "numAppart": "261",
+      "numEtage": 88,
       "surface": "22",
       "terrasse": "no",
       "surfaceterrasse": "des",
       "category": "test",
       "description": "Consectetur perfere",
       "residence": {
-        "id": 1,
-        "name": "El fel",
-        "address": "Borj Cedria",
-        "image": "../../assets/images/R1.jpeg"
+        "id": 98,
+        "name": "Residence Amal",
+        "address": "Address 3",
+        "image": "/assets/images/residence3.jpg"
       }
     },
     {
       "terrasse": "jjjjkkkkkkkkk",
       "category": "S+3",
       "numAppart": 1,
-      "residence": "3",
+      "description": "Consectetur perfere",
+      "residence": {
+        "id": 101,
+        "name": "Residence Foll",
+        "address": "Address 2",
+        "image": "/assets/images/residence2.jpg"
+      },
       "id": "2934"
     },
     {
@@ -44,7 +50,64 @@
       "terrasse": "jjjjkkkkkkkkk",
       "category": "S+1",
       "numAppart": 2,
-      "residence": "2"
+      "description": "Consectetur qsdq",
+      "residence": {
+        "id": 98,
+        "name": "Residence Amal",
+        "address": "Address 3",
+        "image": "/assets/images/residence3.jpg"
+      }
+    },
+    {
+      "id": "ea38",
+      "terasse": "jjjjkkkkkkkkk",
+      "category": "S+2",
+      "numAppart": 2,
+      "numEtage": 4,
+      "description": "ssssssssssssssssssssssssss",
+      "residence": {
+        "id": 60,
+        "name": "Residence Yassmine",
+        "address": "Address 1",
+        "image": "/assets/images/residence1.jpg"
+      },
+      "status": true
+    },
+    {
+      "id": "2e53",
+      "terasse": "jjjjkkkkkkkkk",
+      "category": "S+3",
+      "numAppart": 2,
+      "numEtage": 5,
+      "description": "sqdqsdsqdqs",
+      "residence": {
+        "id": 60,
+        "name": "Residence Yassmine",
+        "address": "Address 1",
+        "image": "/assets/images/residence1.jpg"
+      },
+      "status": true,
+      "surfaceTerrasse": 50
+    }
+  ],
+  "residence": [
+    {
+      "id": 60,
+      "name": "Residence Yassmine",
+      "address": "Address 1",
+      "image": "/assets/images/residence1.jpg"
+    },
+    {
+      "id": 101,
+      "name": "Residence Foll",
+      "address": "Address 2",
+      "image": "/assets/images/residence2.jpg"
+    },
+    {
+      "id": 98,
+      "name": "Residence Amal",
+      "address": "Address 3",
+      "image": "/assets/images/residence3.jpg"
     }
   ]
 }

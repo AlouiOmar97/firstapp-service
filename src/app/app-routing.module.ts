@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"residence/details/:id", component:ResidenceDetailsComponent},
   {path:"appartment/add", component: AddAppartmentComponent},
   {path:"appartment/update/:id", component: UpdateAppartmentComponent},
-  {path:"appartment/:id", component: AppartementComponent},
+  {path:"appartment", component: AppartementComponent},
   {path:"**", component:NotfoundComponent},
 ];
 

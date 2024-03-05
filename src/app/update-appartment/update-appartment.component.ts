@@ -18,7 +18,7 @@ export class UpdateAppartmentComponent {
     numAppart: null, 
     numEtage: 0, 
     surface: null, 
-    terrasse: "", 
+    terrasse: "s", 
     surfaceTerrasse: 0, 
     category: "", 
     description: "", 
@@ -39,7 +39,6 @@ export class UpdateAppartmentComponent {
   updateAppartForm!: FormGroup
   constructor(private logService: LogService, private appartmentService: AppartmentService, private router: Router,private activatedRoute: ActivatedRoute){}
   ngOnInit(): void{
-    let x=""
     this.id=this.activatedRoute.snapshot.params['id']
     this.appartmentService.fetchAppartmentById(this.id).subscribe((data)=>{
       console.log(data);

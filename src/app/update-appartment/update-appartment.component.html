@@ -1,51 +1,53 @@
 <div class="container">
-    <h1>Add Appartment</h1>
-    <form [formGroup]="updateAppartForm" >
-      <div class="row mb-3">
-        <label for="terrasse" class="col-sm-2 col-form-label">Terasse</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="terrasse" id="terrasse">
-          <div *ngIf="terrasse!.touched && terrasse!.errors?.['required']" class="alert alert-danger">Terasse is required</div>
-          <div *ngIf="terrasse!.touched && terrasse!.errors?.['minlength']" class="alert alert-danger">Terasse must have at least 3 caracters</div>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <label for="S+1" class="col-sm-2 col-form-label">Category</label>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="category" value="S+1" formControlName="category" id="S+1">
-            <label class="form-check-label" for="S+1">S+1</label>
+    <h1>Update Appartment</h1>
+    <div *ngIf="updateAppartForm">
+        <form [formGroup]="updateAppartForm" >
+          <div class="row mb-3">
+            <label for="terrasse" class="col-sm-2 col-form-label">Terasse</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="terrasse" id="terrasse">
+              <div *ngIf="terrasse!.touched && terrasse!.errors?.['required']" class="alert alert-danger">Terasse is required</div>
+              <div *ngIf="terrasse!.touched && terrasse!.errors?.['minlength']" class="alert alert-danger">Terasse must have at least 3 caracters</div>
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="category" value="S+2" formControlName="category" id="S+2">
-            <label class="form-check-label" for="S+2">S+2</label>
-          </div> 
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="category" value="S+3" formControlName="category" id="S+3">
-            <label class="form-check-label" for="S+3">S+3</label>
+          <div class="row mb-3">
+            <label for="S+1" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" value="S+1" formControlName="category" id="S+1">
+                <label class="form-check-label" for="S+1">S+1</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" value="S+2" formControlName="category" id="S+2">
+                <label class="form-check-label" for="S+2">S+2</label>
+              </div> 
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="category" value="S+3" formControlName="category" id="S+3">
+                <label class="form-check-label" for="S+3">S+3</label>
+              </div>
+              <div *ngIf="category!.touched && category!.errors?.['required']" class="alert alert-danger">Category is required</div>
+            </div>
           </div>
-          <div *ngIf="category!.touched && category!.errors?.['required']" class="alert alert-danger">Category is required</div>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <label for="numAppart" class="col-sm-2 col-form-label">Appartment NB</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" formControlName="numAppart" id="numAppart">
-          <div *ngIf="numAppart!.touched && numAppart!.errors?.['required']" class="alert alert-danger">Appartment NB is required</div>
-          <div *ngIf="(numAppart!.touched || numAppart!.dirty) && numAppart!.errors?.['min']" class="alert alert-danger">Appartment NB can't be negative</div>
-    
-        </div>
-      </div>
-      <div class="row mb-3">
-        <label for="residence" class="col-sm-2 col-form-label">Residence</label>
-        <div class="col-sm-10">
-          <select class="form-select" formControlName="residence"  id="residence" data-none-selected-text="please select..." aria-label="Default select example">
-            <option value="">Select Residence</option>
-            <option *ngFor="let r of residencesList"  [value]="r.id"> {{ r.name }} </option>
-          </select>
-          <div *ngIf="residence!.touched && residence!.errors?.['required']" class="alert alert-danger">Residence is required</div>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary" [disabled]="updateAppartForm.invalid" (click)="updateAppartment()" >Add</button>
-    </form>
+          <div class="row mb-3">
+            <label for="numAppart" class="col-sm-2 col-form-label">Appartment NB</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" formControlName="numAppart" id="numAppart">
+              <div *ngIf="numAppart!.touched && numAppart!.errors?.['required']" class="alert alert-danger">Appartment NB is required</div>
+              <div *ngIf="(numAppart!.touched || numAppart!.dirty) && numAppart!.errors?.['min']" class="alert alert-danger">Appartment NB can't be negative</div>
+        
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="residence" class="col-sm-2 col-form-label">Residence</label>
+            <div class="col-sm-10">
+              <select class="form-select" formControlName="residence"  id="residence" data-none-selected-text="please select..." aria-label="Default select example">
+                <option value="">Select Residence</option>
+                <option *ngFor="let r of residencesList"  [value]="r.id"> {{ r.name }} </option>
+              </select>
+              <div *ngIf="residence!.touched && residence!.errors?.['required']" class="alert alert-danger">Residence is required</div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="updateAppartForm.invalid" (click)="updateAppartment()" >Update</button>
+        </form>
+    </div>
     </div>

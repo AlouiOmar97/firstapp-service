@@ -1,0 +1,10 @@
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="appartmentC.residence.image" alt="{{ appartmentC.residence.name }}">
+    <div class="card-body">
+      <h5 class="card-title"> {{ appartmentC.residence.name }} </h5>
+      <p class="card-text"> <b>Description :</b> {{ appartmentC.description }} </p>
+      <p class="card-text"> <b>Category :</b> {{ appartmentC.category }} </p>
+      <a [routerLink]="['/appartment/update/',appartmentC.id]" class="btn btn-primary">Update</a>
+    </div>
+  </div>

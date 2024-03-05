@@ -4,48 +4,94 @@
   <div class="row mb-3">
     <label for="terasse" class="col-sm-2 col-form-label">Terasse</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="terasse" id="terasse">
-      <div *ngIf="terasse!.touched && terasse!.errors?.['required']" class="alert alert-danger">Terasse is required</div>
-      <div *ngIf="terasse!.touched && terasse!.errors?.['minlength']" class="alert alert-danger">Terasse must have at least 3 caracters</div>
+      <input type="text" [ngClass]="{ 'is-valid': terasse!.touched && terasse.valid, 'is-invalid': terasse!.touched && terasse.invalid}" class="form-control" formControlName="terasse" id="terasse">
+      <div class="valid-feedback">
+        Terasse is valid ✓
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="terasse!.touched && terasse!.errors?.['required']" >Terasse is required</div>
+        <div *ngIf="terasse!.touched && terasse!.errors?.['minlength']" >Terasse must have at least 3 caracters</div>
+      </div>
     </div>
   </div>
   <div class="row mb-3">
     <label for="S+1" class="col-sm-2 col-form-label">Category</label>
     <div class="col-sm-10">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" value="S+1" formControlName="category" id="S+1">
+        <input [ngClass]="{ 'is-valid': category!.touched && category.valid, 'is-invalid': category!.touched && category.invalid}" class="form-check-input" type="radio" name="category" value="S+1" formControlName="category" id="S+1">
         <label class="form-check-label" for="S+1">S+1</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" value="S+2" formControlName="category" id="S+2">
+        <input [ngClass]="{ 'is-valid': category!.touched && category.valid, 'is-invalid': category!.touched && category.invalid}" class="form-check-input" type="radio" name="category" value="S+2" formControlName="category" id="S+2">
         <label class="form-check-label" for="S+2">S+2</label>
       </div> 
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" value="S+3" formControlName="category" id="S+3">
+        <input [ngClass]="{ 'is-valid': category!.touched && category.valid, 'is-invalid': category!.touched && category.invalid}" class="form-check-input" type="radio" name="category" value="S+3" formControlName="category" id="S+3">
         <label class="form-check-label" for="S+3">S+3</label>
+        <div class="invalid-feedback" style="margin-left: -23px;">
+          <div *ngIf="category!.touched && category!.errors?.['required']" >Category is required</div>
+        </div>
+        <div class="valid-feedback" style="margin-left: -23px;">
+          <div  >Category is valid ✓</div>
+        </div>
       </div>
-      <div *ngIf="category!.touched && category!.errors?.['required']" class="alert alert-danger">Category is required</div>
     </div>
   </div>
   <div class="row mb-3">
     <label for="numAppart" class="col-sm-2 col-form-label">Appartment NB</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" formControlName="numAppart" id="numAppart">
-      <div *ngIf="numAppart!.touched && numAppart!.errors?.['required']" class="alert alert-danger">Appartment NB is required</div>
-      <div *ngIf="(numAppart!.touched || numAppart!.dirty) && numAppart!.errors?.['min']" class="alert alert-danger">Appartment NB can't be negative</div>
-
+      <input type="number" [ngClass]="{ 'is-valid': numAppart!.touched && numAppart.valid, 'is-invalid': numAppart!.touched && numAppart.invalid}" class="form-control" formControlName="numAppart" id="numAppart">
+      
+      <div class="valid-feedback">
+        Appartment NB is valid ✓
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="numAppart!.touched && numAppart!.errors?.['required']" >Appartment NB is required</div>
+      <div *ngIf="(numAppart!.touched || numAppart!.dirty) && numAppart!.errors?.['min']" >Appartment NB can't be negative</div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="numEtage" class="col-sm-2 col-form-label">Floor NB</label>
+    <div class="col-sm-10">
+      <input type="number" [ngClass]="{ 'is-valid': numEtage!.touched && numEtage.valid, 'is-invalid': numEtage!.touched && numEtage.invalid}" class="form-control" formControlName="numEtage" id="numEtage">
+      <div class="valid-feedback">
+        Floor NB is valid ✓
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="numEtage!.touched && numEtage!.errors?.['required']" >Floor NB is required</div>
+        <div *ngIf="(numEtage!.touched || numEtage!.dirty) && numEtage!.errors?.['min']">Floor NB can't be negative</div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" [ngClass]="{ 'is-valid': description!.touched && description.valid, 'is-invalid': description!.touched && description.invalid}" formControlName="description" name="description" id="description" cols="30" rows="2"></textarea>
+      <div class="valid-feedback">
+        Description is valid ✓
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="description!.touched && description!.errors?.['required']" >Description is required</div>
+        <div *ngIf="description!.touched && description!.errors?.['minlength']" >Description must have at least 10 caracters</div>
+      </div>
     </div>
   </div>
   <div class="row mb-3">
     <label for="residence" class="col-sm-2 col-form-label">Residence</label>
     <div class="col-sm-10">
-      <select class="form-select" formControlName="residence"  id="residence" data-none-selected-text="please select..." aria-label="Default select example">
-        <option value="">Select Residence</option>
-        <option *ngFor="let r of residencesList"  [value]="r.id"> {{ r.name }} </option>
+      <select class="form-select" [ngClass]="{ 'is-valid': residence!.touched && residence.valid, 'is-invalid': residence!.touched && residence.invalid}" formControlName="residence"  id="residence">
+        <option value="" selected>Select Residence</option>
+        <option *ngFor="let r of residencesList; index as i"  [value]="i"> {{ r.name }} </option>
       </select>
-      <div *ngIf="residence!.touched && residence!.errors?.['required']" class="alert alert-danger">Residence is required</div>
+      <div class="valid-feedback">
+        Description is valid ✓
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="residence!.touched && residence!.errors?.['required']">Residence is required</div>
+      </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="addAppartForm.invalid" (click)="addAppartment()" >Add</button>
+  <button type="submit" class="btn btn-primary" [ngClass]="{ 'btn-success': addAppartForm!.touched && addAppartForm.valid, 'btn-danger': addAppartForm!.touched && addAppartForm.invalid}" [disabled]="addAppartForm.invalid" (click)="addAppartment()" >Add</button>
 </form>
 </div>
